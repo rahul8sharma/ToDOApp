@@ -9,9 +9,14 @@
   </head>
 
   <body>
-    <%= render 'layouts/navigation' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container-narrow">
+      <div class="masthead">
+        <%= render 'layouts/navigation' %>
+        <h3 class="muted"><%= link_to "ToDo App", root_path %></h3>
+      </div>
+      <%= render 'layouts/messages' %>
+      <hr />
+      <%= yield %>
+    </div>
   </body>
 </html>
