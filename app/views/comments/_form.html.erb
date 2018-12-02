@@ -3,7 +3,7 @@
   <%= f.hidden_field :task_id, :value => task.id %>
   <div class="form-group">
     <label for="exampleInputEmail1">Body</label>
-    <%= f.text_field :body, class: "comment_name form-control", "aria-describedby": "body", placeholder: "Enter your comment" %>
+    <%= f.text_field :body, class: "comment_name form-control", "aria-describedby": "body", placeholder: "Enter your comment", required: "required" %>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">File</label>

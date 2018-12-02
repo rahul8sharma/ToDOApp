@@ -1,6 +1,6 @@
 <%= form_for @project, html: {style: "margin-bottom: 20px;"}, remote: true do |f| %>
   <div class="input-group">
-    <%= f.text_field :name, class: "task_name form-control" %>
+    <%= f.text_field :name, class: "task_name form-control", required: "required" %>
     <span class="input-group-btn">
       <%= f.submit 'Create Task', class: 'btn btn-default' %>
     </span>
