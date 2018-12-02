@@ -1,0 +1,13 @@
+<%= form_for Comment.new, :html => { :style => 'margin-left: 17px;
+    margin-bottom: 18px;', class: "form-group" }, remote: true do |f| %>
+  <%= f.hidden_field :task_id, :value => task.id %>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Body</label>
+    <%= f.text_field :body, class: "comment_name form-control", "aria-describedby": "body", placeholder: "Enter your comment" %>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">File</label>
+    <%= f.file_field :avatar, class: "form-control comment_file" %>
+  </div>
+  <%= f.submit 'Add Comment', class: 'btn btn-primary' %>
+<% end %>

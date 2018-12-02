@@ -1,0 +1,18 @@
+<div class="media" id="project_task_comment<%= comment.id %>">
+  <p class="pull-right">
+    <small>
+      <%= comment.created_at.strftime("%Y-%m-%d %I:%M%p") %>
+    </small>
+  </p>
+  <div class="media-body">
+    <h4 class="media-heading user_name">
+      <%= comment.user.email %>
+    </h4>
+    <%= comment.body %>
+    <% if comment.avatar.present? %>
+      <a href="<%= comment.avatar.url %>" target="_blank"> Open File</a>
+    <% end %>
+    <p>
+      <%= link_to 'Delete', comment, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
+  </div>
+</div>

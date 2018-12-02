@@ -1,0 +1,10 @@
+<%= form_for Task.new, :html => { :style => 'margin-left: 17px;
+    margin-bottom: 18px;' }, remote: true do |f| %>
+  <%= f.hidden_field :project_id, :value => project.id %>
+  <div class="input-group">
+    <%= f.text_field :name, class: "task_name form-control" %>
+    <span class="input-group-btn">
+      <%= f.submit 'Create Task', class: 'btn btn-default' %>
+    </span>
+  </div>
+<% end %>

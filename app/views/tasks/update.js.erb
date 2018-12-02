@@ -1,0 +1,6 @@
+$("#project_task_name_update_<%= @task.id %>").hide()
+$("#project-task-edit-button-<%= @task.id %>").show()
+$('#project-task-name-display-<%= @task.id %>').html("<%= @task.name %>")
+$('#project-task-status-<%= @task.id %>').html("Status: <%= @task.status %>")
+$('#project-task-priority-<%= @task.id %>').html("Priority: <%= @task.priority %>")
+$('#project-task-deadline-<%= @task.id %>').html("Deadline: <%= @task.deadline %>")

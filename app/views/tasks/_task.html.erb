@@ -1,0 +1,27 @@
+<div class="panel panel-default" id="project_task_<%= task.id %>">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#all_tasks<%= task.project_id %>" href="#task-collapse<%= task.id %>" id="project-task-name-display-<%= task.id %>">
+        <%= task.name %>
+      </a>
+      <%= form_for task, :html => { :style => 'float: right;margin-top: -9px;' }, remote: true do |f| %>
+        <span id="project_task_name_update_<%= task.id %>" style="display: none;">
+          <%= f.text_field :name %>
+          <%= f.date_field :deadline %>
+          <%= f.select(:status, Task.statuses.keys.map {|key| [key.humanize, key]}) %>
+          <%= f.select(:priority, Task.priorities.keys.map {|key| [key.humanize, key]}) %>
+          <%= f.submit "Update", class: "btn btn-primary a-btn-slide-text" %>
+        </span>
+        <a data-projectTaskId="<%= task.id %>" class="btn btn-primary a-btn-slide-text project-task-edit" id="project-task-edit-button-<%= task.id %>">
+          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+          <span><strong>Edit</strong></span>
+        </a>
+        <%= link_to task, method: :delete, class: "btn btn-primary a-btn-slide-text", data: {confirm: "Are you sure?"}, remote: true do %>
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <span><strong>Delete</strong></span>  
+        <% end %>
+      <% end %>
+    </h4>
+  </div>
+  <%= render 'tasks/show', :task => task %>
+</div>

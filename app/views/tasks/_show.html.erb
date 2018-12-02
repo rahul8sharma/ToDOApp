@@ -1,0 +1,9 @@
+<div id="task-collapse<%= task.id %>" class="panel-collapse collapse in">
+  <div class="panel-body">
+    <p id="project-task-status-<%= task.id %>"> Status: <%= task.status.humanize %></p>
+    <p id="project-task-priority-<%= task.id %>"> Priority: <%= task.priority.humanize %></p>
+    <p id="project-task-deadline-<%= task.id %>"> Deadline: <%= task.deadline %></p>
+    <%= render 'comments/form', :task => task %>
+    <%= render 'comments/index', :task => task %>
+  </div>
+</div>
