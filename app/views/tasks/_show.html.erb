@@ -1,8 +1,16 @@
-<div id="task-collapse<%= task.id %>" class="panel-collapse collapse in">
+<div id="task-collapse<%= task.id %>" class="panel-collapse collapse">
   <div class="panel-body">
-    <p id="project-task-status-<%= task.id %>"> Status: <%= task.status.humanize %></p>
-    <p id="project-task-priority-<%= task.id %>"> Priority: <%= task.priority.humanize %></p>
-    <p id="project-task-deadline-<%= task.id %>"> Deadline: <%= task.deadline %></p>
+    <div class="container">
+      <span class="label label-success" id="project-task-status-<%= task.id %>" style="margin-right: 20px;">
+        Status: <%= task.status.humanize %>
+      </span>
+      <span class="label label-success" id="project-task-priority-<%= task.id %>" style="margin-right: 20px;">
+        Priority: <%= task.priority.humanize %>
+      </span>
+      <span class="label label-success" id="project-task-deadline-<%= task.id %>" style="margin-right: 20px;">
+        Deadline: <%= task.deadline %>
+      </span>
+    </div>
     <%= render 'comments/form', :task => task %>
     <%= render 'comments/index', :task => task %>
   </div>

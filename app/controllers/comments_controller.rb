@@ -1,14 +1,6 @@
 class CommentsController < ApplicationController
 	before_action :authenticate_user!
 
-  def index
-    @comments = Comment.all
-  end
-
-  def new
-    @comment = Comment.new
-  end
-
   def create
     @comment = Comment.create!(allowed_params)
 
