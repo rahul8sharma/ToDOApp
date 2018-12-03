@@ -288,5 +288,5 @@ Devise.setup do |config|
   #   include Turbolinks::Controller
   # end
 
-  config.omniauth :facebook, "173680926781662", "9f01b007027db0c3d068066831bb49bd", scope: 'public_profile,email'
+  config.omniauth :facebook, "", "", scope: 'public_profile,email'
 end
