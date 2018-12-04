@@ -9,13 +9,15 @@ Things you may want to cover:
 
 * Rails Version: 5.1.6.1
 
+* Facebook Login: Need to add facebook API ID and Secret key in device.rb 
+
 * Setup a thin server: https://stackoverflow.com/questions/49353496/omniauth-facebook-login-not-working
 
 * Start a Server: thin start --ssl
 
 * System dependencies
 
-* Configuration
+* Configuration:
 
 * Database creation
 

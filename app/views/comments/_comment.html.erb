@@ -13,6 +13,6 @@
       <a href="<%= comment.avatar.url %>" target="_blank"> Open File</a>
     <% end %>
     <p>
-      <%= link_to 'Delete', comment, method: :delete, data: {confirm: "Are you sure?"}, remote: true %>
+      <%= link_to 'Delete', comment, method: :delete, class: "#{'hidden' if comment.user.id != current_user.id}", data: {confirm: "Are you sure?"}, remote: true %>
   </div>
 </div>

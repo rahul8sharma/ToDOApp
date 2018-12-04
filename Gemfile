@@ -40,6 +40,10 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry'
+  gem 'faker'
+  gem 'rspec-rails', '~> 3.8'
+  gem 'rails-controller-testing'
+  gem "factory_bot_rails"
 end
 
 group :development do

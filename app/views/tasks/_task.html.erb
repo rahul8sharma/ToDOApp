@@ -12,11 +12,11 @@
           <%= f.select(:priority, Task.priorities.keys.map {|key| [key.humanize, key]}) %>
           <%= f.submit "Update", class: "btn btn-primary a-btn-slide-text" %>
         </span>
-        <a data-projectTaskId="<%= task.id %>" class="btn btn-primary a-btn-slide-text project-task-edit" id="project-task-edit-button-<%= task.id %>">
+        <a data-projectTaskId="<%= task.id %>" class="btn btn-primary a-btn-slide-text project-task-edit <%= 'hidden' if task.project.user.id != current_user.id %>" id="project-task-edit-button-<%= task.id %>">
           <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
           <span><strong>Edit</strong></span>
         </a>
-        <%= link_to task, method: :delete, class: "btn btn-primary a-btn-slide-text", data: {confirm: "Are you sure?"}, remote: true do %>
+        <%= link_to task, method: :delete, class: "btn btn-primary a-btn-slide-text #{ 'hidden' if task.project.user.id != current_user.id}", data: {confirm: "Are you sure?"}, remote: true do %>
           <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             <span><strong>Delete</strong></span>  
         <% end %>
