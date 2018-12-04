@@ -1,41 +1,10 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    # @projects = current_user.projects
-    @projects = Project.all
-  end
+  include CRUDActions
 
-  def new
-    @project = Project.new
-  end
-
-  def create
-    @project = Project.create!(allowed_params)
-
-    respond_to do |f|
-      f.html { redirect_to projects_url }
-      f.js
-    end
-  end
-
-  def update
-    @project = Project.find(params[:id])
-    @project.update_attributes!(allowed_params)
-
-    respond_to do |f|
-      f.html { redirect_to projects_url }
-      f.js
-    end
-  end
-
-  def destroy
-    @project = Project.destroy(params[:id])
-
-    respond_to do |f|
-      f.html { redirect_to projects_url }
-      f.js
-    end
+  def api_resource
+    Project
   end
 
   private
